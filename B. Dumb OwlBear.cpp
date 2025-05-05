@@ -1,48 +1,38 @@
 #include<bits/stdc++.h>
 #include<vector>
+#include<string>
+#include<algorithm>
+#include<math.h>
+#include<cmath>
 using namespace std;
 #define ll long long int
-#define endl "\n"
-
-void Kuldip()
+#define endl '\n'
+#define pb push_back
+#define yes cout<<"YES"<<endl
+#define no cout<<"NO"<<endl
+#define all(x) x.begin(),x.end()
+#define mod 1000000007
+void KULDIP()
 {
-ll n,q,sa=0;cin>>n;
-vector<ll>a(n),A(n);
-for(ll i=0;i<n;i++)
+int n,i,m=2000,b;cin>>n;
+vector<int>a(n);
+for(i=0;i<n;i++)
 {
     cin>>a[i];
-    sa+=a[i];
 }
-cin>>q;
-for(ll i=0;i<n;i++)
+for(i=0;i<n-1;i++)
 {
-    A[i]=sa-a[i];
-}
-for(ll i=0;i<q;i++)
-{
-    ll t=0,c=0,naima=0,B,b;cin>>b;
-    while(t<b)
+    b=abs(a[i]-a[i+1]);
+    if(b<m)
     {
-            naima++;
-        t+=A[c];
-        if(c==n-1)
-        {
-            c=0;
-        }
-        else{
-            c++;
-        }
+        m=b;
     }
-    cout<<naima<<endl;
 }
-
-
+cout<<m<<endl;
 }
-int32_t main()
+int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;cin>>t; while(t--)
-    Kuldip();
+    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    int t; cin>>t;while(t--)
+    KULDIP();
 }
